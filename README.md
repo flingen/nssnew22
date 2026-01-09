@@ -1,1 +1,1 @@
-nss2
+Nigeria Stablecoin Summit 2.0 Website
