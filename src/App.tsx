@@ -3,6 +3,7 @@ import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
+import { Gallery } from './components/sections/Gallery';
 import { Countdown } from './components/sections/Countdown';
 import { Metrics } from './components/sections/Metrics';
 import { Pillars } from './components/sections/Pillars';
@@ -22,6 +23,7 @@ function HomePage() {
       <main>
         <Hero />
         <About />
+        <Gallery />
         <Countdown />
         <Metrics />
         <Pillars />
