@@ -40,7 +40,8 @@ export default {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
-        'slide-right': 'slideRight 30s linear infinite',
+        'slide-right': 'slideRight 60s linear infinite',
+        'slide-left': 'slideLeft 60s linear infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -62,6 +63,10 @@ export default {
         slideRight: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
       boxShadow: {
