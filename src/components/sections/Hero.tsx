@@ -41,9 +41,12 @@ export function Hero() {
         ))}
       </div>
 
+      {/* Top gradient - darkens only the top of the hero so nav + title stay readable */}
+      <div className="absolute top-0 left-0 right-0 h-[55%] bg-gradient-to-b from-black/75 via-black/40 to-transparent pointer-events-none" />
+
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-40">
         <div className="animate-stagger">
-          <h1 className="font-satoshi font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-2xl">
+          <h1 className="font-satoshi font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-2xl" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6)' }}>
             Nigeria Stablecoin Summit 2.0
           </h1>
 
