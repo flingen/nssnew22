@@ -3,10 +3,10 @@ import { useCountUp } from '../../hooks/useCountUp';
 
 const metrics = [
   { value: 750, suffix: '+', label: 'Attendees', icon: Users, color: 'from-nigeria-green to-green-light' },
-  { value: 50, suffix: '+', label: 'Companies', icon: Building2, color: 'from-royal-blue to-electric-blue' },
+  { value: 150, suffix: '+', label: 'Companies', icon: Building2, color: 'from-royal-blue to-electric-blue' },
   { value: 25, suffix: '+', label: 'Speakers', icon: Mic2, color: 'from-purple to-purple-light' },
   { value: 10, suffix: '+', label: 'Exhibitions', icon: Store, color: 'from-fintech-gold to-gold-dark' },
-  { value: 2, suffix: '', label: 'Essay Competitions', icon: FileText, color: 'from-cyan to-electric-blue' },
+  { value: 1, suffix: '', label: 'Essay Competition', icon: FileText, color: 'from-cyan to-electric-blue' },
   { value: 1, suffix: '', label: 'Stage', icon: LayoutGrid, color: 'from-nigeria-green to-cyan' },
 ];
 
