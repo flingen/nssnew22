@@ -76,7 +76,7 @@ export function Hero() {
               className="btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2 font-bold"
             >
               <Calendar className="w-5 h-5" />
-              Book a Free Seat
+              Book a Seat
             </a>
             <a
               href="https://drive.google.com/drive/folders/1oz7kOV88m6olRAZYrPGP-WxSv1mcJcZM?usp=sharing"
