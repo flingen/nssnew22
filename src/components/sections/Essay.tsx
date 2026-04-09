@@ -2,15 +2,15 @@ import { Trophy, Calendar, GraduationCap, FileText, Award, Users, ExternalLink, 
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const prizes = [
-  { icon: Trophy, text: 'Prizes for the top 3 essays in both categories' },
+  { icon: Trophy, text: 'Prizes for the top 3 essays' },
   { icon: Award, text: 'Recognition at the Nigeria Stablecoin Summit' },
   { icon: Users, text: 'Exclusive networking opportunities' },
 ];
 
 const guidelines = [
-  'Open to undergraduates and secondary school students across Nigerian tertiary institutions',
+  'Open to undergraduates across Nigerian tertiary institutions',
   'Original essays only - AI-generated content will be disqualified',
-  'Application closes: April 30, 2025',
+  'Application closes: June 30, 2026',
 ];
 
 const categories = [
@@ -21,14 +21,6 @@ const categories = [
     color: 'from-royal-blue to-electric-blue',
     borderColor: 'border-royal-blue',
     submitLink: 'https://forms.gle/UkgTxizuxoxSqndp8',
-  },
-  {
-    icon: FileText,
-    title: 'Secondary School Students',
-    topic: "My Role in the Future of Finance - How students can learn, build, and participate in Nigeria's digital economy",
-    color: 'from-nigeria-green to-green-light',
-    borderColor: 'border-nigeria-green',
-    submitLink: 'https://forms.gle/37W8cBYiwfbCqeXC7',
   },
 ];
 
@@ -49,14 +41,14 @@ export function Essay() {
             The NSS 2.0 National Essay Competition
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Spotlighting the next generation of thinkers and innovators through two nationwide Essay Contests
-            for undergraduates of tertiary institutions and secondary school students in Nigeria.
+            Spotlighting the next generation of thinkers and innovators through a nationwide Essay Contest
+            for undergraduates of tertiary institutions in Nigeria.
           </p>
         </div>
 
         <div
           ref={ref}
-          className={`grid lg:grid-cols-2 gap-8 mb-12 transition-all duration-700 ${
+          className={`grid lg:grid-cols-1 max-w-2xl mx-auto gap-8 mb-12 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -140,7 +132,7 @@ export function Essay() {
             <div className="mt-6 flex items-center gap-3 p-4 bg-fintech-gold/10 rounded-xl border border-fintech-gold/20">
               <Calendar className="w-5 h-5 text-fintech-gold flex-shrink-0" />
               <p className="text-deep-navy font-semibold">
-                Deadline: April 30, 2025
+                Deadline: June 30, 2026
               </p>
             </div>
           </div>

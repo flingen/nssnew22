@@ -47,7 +47,7 @@ export function CTA() {
             className="btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2"
           >
             <Ticket className="w-5 h-5" />
-            Book a Free Seat
+            Book a Seat
             <ArrowRight size={18} />
           </a>
           <a
