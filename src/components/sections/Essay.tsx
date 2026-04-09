@@ -132,7 +132,7 @@ export function Essay() {
             <div className="mt-6 flex items-center gap-3 p-4 bg-fintech-gold/10 rounded-xl border border-fintech-gold/20">
               <Calendar className="w-5 h-5 text-fintech-gold flex-shrink-0" />
               <p className="text-deep-navy font-semibold">
-                Deadline: April 30, 2025
+                Deadline: June 30, 2026
               </p>
             </div>
           </div>
