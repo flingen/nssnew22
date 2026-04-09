@@ -86,6 +86,13 @@ export function Hero() {
             >
               Marketing Opportunities
             </a>
+            <a href="https://calendly.com/nigeriastablecoinsummit/nss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/90 backdrop-blur-md border-2 border-emerald-500 text-white px-10 py-4 text-lg inline-flex items-center justify-center gap-2 font-bold rounded-lg transition-all hover:bg-slate-700/90 hover:shadow-lg hover:shadow-emerald-500/20"
+            >
+              Book a Call
+            </a>
           </div>
         </div>
       </div>
