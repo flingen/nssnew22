@@ -17,39 +17,15 @@ export function About() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-3">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/r6_b1526 copy copy copy.jpg"
-                  alt="Nigeria Stablecoin Summit conference"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/r6_b1556-2 copy copy.jpg"
-                  alt="Nigeria Stablecoin Summit team photo"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="space-y-3 pt-8">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/copy_of_1u0a0291.jpg"
-                  alt="Nigeria Stablecoin Summit speaker"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/africa_stable_network_2025-490 copy copy copy.jpg"
-                  alt="Nigeria Stablecoin Summit team photo"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/-VflHkXK0HI?autoplay=1&mute=1&loop=1&playlist=-VflHkXK0HI&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1"
+              title="Nigeria Stablecoin Summit Highlights"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
           </div>
 
           <div>
