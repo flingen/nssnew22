@@ -20,7 +20,7 @@ export function About() {
           <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/-VflHkXK0HI?autoplay=1&mute=1&loop=1&playlist=-VflHkXK0HI&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1"
+              src="https://www.youtube.com/embed/-x8DxbBTnbgs?autoplay=1&mute=1&loop=1&playlist=-x8DxbBTnbgs&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1"
               title="Nigeria Stablecoin Summit Highlights"
               frameBorder="0"
               allow="autoplay; encrypted-media"
