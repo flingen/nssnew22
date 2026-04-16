@@ -41,55 +41,54 @@ export function Sponsorship() {
 
         <div
           ref={ref}
-          className={`grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto transition-all duration-700 ${
+          className={`grid md:grid-cols-3 gap-6 transition-all duration-700 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
           {opportunities.map((opportunity) => (
             <div
               key={opportunity.title}
-              className="pillar-card p-8 group"
+              className="pillar-card p-8 group flex flex-col"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${opportunity.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <opportunity.icon className="w-8 h-8 text-white" />
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${opportunity.color} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <opportunity.icon className="w-7 h-7 text-white" />
               </div>
 
-              <h3 className="font-satoshi font-bold text-2xl text-deep-navy mb-4">
+              <h3 className="font-satoshi font-bold text-xl text-deep-navy mb-3">
                 {opportunity.title}
               </h3>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 text-sm leading-relaxed mb-5 flex-grow">
                 {opportunity.description}
               </p>
 
               <div className="flex items-center gap-2 text-fintech-gold">
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 flex-shrink-0" />
                 <p className="text-sm font-semibold italic">
                   {opportunity.highlight}
                 </p>
               </div>
             </div>
           ))}
-        </div>
 
-        <div className="text-center">
-          <div className="glass-card-white rounded-2xl p-8 md:p-10 max-w-2xl mx-auto">
-            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-fintech-gold to-gold-dark flex items-center justify-center">
-              <Sparkles className="w-8 h-8 text-white" />
+          {/* CTA card as the third column */}
+          <div className="glass-card-white rounded-2xl p-8 flex flex-col items-center justify-center text-center">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-fintech-gold to-gold-dark flex items-center justify-center">
+              <Sparkles className="w-7 h-7 text-white" />
             </div>
-            <h3 className="font-satoshi font-bold text-2xl text-deep-navy mb-2">
-              Book Now - Slots are Limited!
+            <h3 className="font-satoshi font-bold text-xl text-deep-navy mb-2">
+              Book Now – Slots are Limited!
             </h3>
-            <p className="text-gray-700 mb-8">
+            <p className="text-gray-700 text-sm mb-6">
               Contact us to discuss partnership packages tailored to your brand's goals and objectives.
             </p>
             <a
               href="https://drive.google.com/drive/folders/1oz7kOV88m6olRAZYrPGP-WxSv1mcJcZM?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary px-8 py-4 text-base inline-flex items-center gap-2"
+              className="btn-primary px-6 py-3 text-sm inline-flex items-center gap-2"
             >
-              Download Marketing Opportunities Deck <ArrowRight size={18} />
+              Download Marketing Deck <ArrowRight size={16} />
             </a>
           </div>
         </div>
