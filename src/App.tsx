@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
@@ -18,6 +19,33 @@ import { AdminPage } from './pages/AdminPage';
 import { TravelPage } from './pages/TravelPage';
 import { SpeakersPage } from './pages/SpeakersPage';
 import { AgendaPage } from './pages/AgendaPage';
+
+// Sends a pageview to Google Analytics AND Meta Pixel every time the route changes.
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname + location.search;
+
+    // Google Analytics pageview
+    // @ts-expect-error gtag is injected by the script in index.html
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      // @ts-expect-error gtag is injected by the script in index.html
+      window.gtag('config', 'G-B8L10Q532E', {
+        page_path: path,
+      });
+    }
+
+    // Meta Pixel pageview
+    // @ts-expect-error fbq is injected by the Meta Pixel script in index.html
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      // @ts-expect-error fbq is injected by the Meta Pixel script in index.html
+      window.fbq('track', 'PageView');
+    }
+  }, [location]);
+
+  return null;
+}
 
 function HomePage() {
   return (
@@ -46,6 +74,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/travel" element={<TravelPage />} />
