@@ -7,7 +7,6 @@ import { Gallery } from './components/sections/Gallery';
 import { Countdown } from './components/sections/Countdown';
 import { Metrics } from './components/sections/Metrics';
 import { Pillars } from './components/sections/Pillars';
-import { Speakers } from './components/sections/Speakers';
 import { PastBrands } from './components/sections/PastBrands';
 import { WhoShouldAttend } from './components/sections/WhoShouldAttend';
 import { Panels } from './components/sections/Panels';
@@ -31,7 +30,6 @@ function HomePage() {
         <Countdown />
         <Metrics />
         <Pillars />
-        <Speakers />
         <PastBrands />
         <WhoShouldAttend />
         <Panels />
