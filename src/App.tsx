@@ -7,7 +7,7 @@ import { Gallery } from './components/sections/Gallery';
 import { Countdown } from './components/sections/Countdown';
 import { Metrics } from './components/sections/Metrics';
 import { Pillars } from './components/sections/Pillars';
-import { Speakers } from './components/sections/Speakers';
+import { PastBrands } from './components/sections/PastBrands';
 import { WhoShouldAttend } from './components/sections/WhoShouldAttend';
 import { Panels } from './components/sections/Panels';
 import { Sponsorship } from './components/sections/Sponsorship';
@@ -15,6 +15,9 @@ import { Essay } from './components/sections/Essay';
 import { CTA } from './components/sections/CTA';
 import { FAQ } from './components/sections/FAQ';
 import { AdminPage } from './pages/AdminPage';
+import { TravelPage } from './pages/TravelPage';
+import { SpeakersPage } from './pages/SpeakersPage';
+import { AgendaPage } from './pages/AgendaPage';
 
 function HomePage() {
   return (
@@ -27,7 +30,7 @@ function HomePage() {
         <Countdown />
         <Metrics />
         <Pillars />
-        <Speakers />
+        <PastBrands />
         <WhoShouldAttend />
         <Panels />
         <Sponsorship />
@@ -45,6 +48,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/travel" element={<TravelPage />} />
+        <Route path="/speakers" element={<SpeakersPage />} />
+        <Route path="/agenda" element={<AgendaPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>

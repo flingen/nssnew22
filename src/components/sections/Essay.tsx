@@ -33,7 +33,7 @@ export function Essay() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-royal-blue/5 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <span className="inline-block px-4 py-2 rounded-full bg-nigeria-green/10 text-nigeria-green text-sm font-semibold tracking-widest uppercase mb-6">
             Student Spotlight
           </span>
@@ -48,26 +48,27 @@ export function Essay() {
 
         <div
           ref={ref}
-          className={`grid lg:grid-cols-1 max-w-2xl mx-auto gap-8 mb-12 transition-all duration-700 ${
+          className={`grid lg:grid-cols-3 gap-6 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
+          {/* Column 1: Category card */}
           {categories.map((category) => (
             <div
               key={category.title}
-              className={`essay-card p-8 border-t-4 ${category.borderColor}`}
+              className={`essay-card p-8 border-t-4 ${category.borderColor} flex flex-col`}
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 shadow-lg`}>
-                <category.icon className="w-8 h-8 text-white" />
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-5 shadow-lg`}>
+                <category.icon className="w-7 h-7 text-white" />
               </div>
 
-              <h3 className="font-satoshi font-bold text-2xl text-deep-navy mb-2">
+              <h3 className="font-satoshi font-bold text-xl text-deep-navy mb-2">
                 {category.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mb-4">Essay Topic:</p>
+              <p className="text-gray-500 text-sm mb-3">Essay Topic:</p>
 
-              <p className="text-gray-700 font-medium leading-relaxed mb-6 min-h-[60px]">
+              <p className="text-gray-700 font-medium text-sm leading-relaxed mb-6 flex-grow">
                 "{category.topic}"
               </p>
 
@@ -81,57 +82,57 @@ export function Essay() {
               </a>
             </div>
           ))}
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="glass-card-white rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-fintech-gold to-gold-dark flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-deep-navy" />
+          {/* Column 2: What's at Stake */}
+          <div className="glass-card-white rounded-2xl p-8 flex flex-col">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-fintech-gold to-gold-dark flex items-center justify-center">
+                <Trophy className="w-5 h-5 text-deep-navy" />
               </div>
-              <h3 className="font-satoshi font-bold text-xl text-deep-navy">What's at Stake</h3>
+              <h3 className="font-satoshi font-bold text-lg text-deep-navy">What's at Stake</h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 flex-grow">
               {prizes.map((prize) => (
                 <div
                   key={prize.text}
-                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                  className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-nigeria-green/10 flex items-center justify-center flex-shrink-0">
-                    <prize.icon className="w-5 h-5 text-nigeria-green" />
+                  <div className="w-9 h-9 rounded-lg bg-nigeria-green/10 flex items-center justify-center flex-shrink-0">
+                    <prize.icon className="w-4 h-4 text-nigeria-green" />
                   </div>
-                  <p className="text-gray-700 font-medium">{prize.text}</p>
+                  <p className="text-gray-700 text-sm font-medium">{prize.text}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass-card-white rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-royal-blue to-electric-blue flex items-center justify-center">
-                <AlertCircle className="w-6 h-6 text-white" />
+          {/* Column 3: Key Details */}
+          <div className="glass-card-white rounded-2xl p-8 flex flex-col">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-royal-blue to-electric-blue flex items-center justify-center">
+                <AlertCircle className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-satoshi font-bold text-xl text-deep-navy">Key Details</h3>
+              <h3 className="font-satoshi font-bold text-lg text-deep-navy">Key Details</h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 flex-grow">
               {guidelines.map((guideline, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
+                  className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl"
                 >
-                  <div className="w-6 h-6 rounded-full bg-nigeria-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-4 h-4 text-nigeria-green" />
+                  <div className="w-5 h-5 rounded-full bg-nigeria-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle className="w-3.5 h-3.5 text-nigeria-green" />
                   </div>
-                  <p className="text-gray-700">{guideline}</p>
+                  <p className="text-gray-700 text-sm">{guideline}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 flex items-center gap-3 p-4 bg-fintech-gold/10 rounded-xl border border-fintech-gold/20">
+            <div className="mt-4 flex items-center gap-3 p-3 bg-fintech-gold/10 rounded-xl border border-fintech-gold/20">
               <Calendar className="w-5 h-5 text-fintech-gold flex-shrink-0" />
-              <p className="text-deep-navy font-semibold">
+              <p className="text-deep-navy text-sm font-semibold">
                 Deadline: June 30, 2026
               </p>
             </div>
