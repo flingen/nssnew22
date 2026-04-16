@@ -19,7 +19,7 @@ import { Footer } from '../components/layout/Footer';
 
 const TICKET_URL = 'https://tix.africa/discover/nss2026';
 const INVITE_EMAIL = 'nss@afristablecoin.org';
-const RTG_WHATSAPP =
+const RDG_WHATSAPP =
   'https://wa.me/2349035523731?text=Hello%20Olamide%2C%20I%27m%20enquiring%20about%20travel%20support%20for%20the%20Nigeria%20Stablecoin%20Summit.';
 
 export function TravelPage() {
@@ -185,7 +185,7 @@ export function TravelPage() {
           </div>
         </section>
 
-        {/* RTG TRAVEL PARTNER */}
+        {/* RDG TRAVEL PARTNER */}
         <section className="section-gradient-rich py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-nigeria-green/10 rounded-full blur-[150px]" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple/10 rounded-full blur-[150px]" />
@@ -196,10 +196,10 @@ export function TravelPage() {
                 Step 3 — Official Travel Partner
               </span>
               <h2 className="font-satoshi font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
-                Book Through <span className="gradient-text-gold">RTG Travel Agency</span>
+                Book Through <span className="gradient-text-gold">RDG Travel Agency</span>
               </h2>
               <p className="text-text-light text-lg max-w-2xl mx-auto">
-                We've partnered with RTG Travel Agency to handle every part of your trip — so you
+                We've partnered with RDG Travel Agency to handle every part of your trip — so you
                 can focus on the summit, not the logistics.
               </p>
             </div>
@@ -229,7 +229,7 @@ export function TravelPage() {
             <div className="glass-card-strong rounded-2xl p-8 md:p-10 text-center">
               <p className="text-text-light text-base mb-2">Speak directly with</p>
               <h3 className="font-satoshi font-bold text-2xl md:text-3xl text-white mb-1">
-                Olamide at RTG Travel
+                Olamide at RDG Travel
               </h3>
               <p className="text-text-grey text-sm mb-6">
                 Mention <span className="text-fintech-gold font-semibold">"Nigeria Stablecoin Summit"</span>{' '}
@@ -237,7 +237,7 @@ export function TravelPage() {
               </p>
 
               <a
-                href={RTG_WHATSAPP}
+                href={RDG_WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-green inline-flex items-center gap-3 px-8 py-4 text-base"
