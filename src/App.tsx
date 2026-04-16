@@ -15,6 +15,9 @@ import { Essay } from './components/sections/Essay';
 import { CTA } from './components/sections/CTA';
 import { FAQ } from './components/sections/FAQ';
 import { AdminPage } from './pages/AdminPage';
+import { TravelPage } from './pages/TravelPage';
+import { SpeakersPage } from './pages/SpeakersPage';
+import { AgendaPage } from './pages/AgendaPage';
 
 function HomePage() {
   return (
@@ -45,6 +48,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/travel" element={<TravelPage />} />
+        <Route path="/speakers" element={<SpeakersPage />} />
+        <Route path="/agenda" element={<AgendaPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
