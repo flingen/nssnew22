@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Gallery } from './components/sections/Gallery';
+import { NSS2027Highlight } from './components/sections/NSS2027Highlight';
 import { Countdown } from './components/sections/Countdown';
 import { Metrics } from './components/sections/Metrics';
 import { Pillars } from './components/sections/Pillars';
@@ -19,6 +20,7 @@ import { AdminPage } from './pages/AdminPage';
 import { TravelPage } from './pages/TravelPage';
 import { SpeakersPage } from './pages/SpeakersPage';
 import { AgendaPage } from './pages/AgendaPage';
+import { NSS2027Page } from './pages/NSS2027Page';
 
 // Sends a pageview to Google Analytics AND Meta Pixel every time the route changes.
 function AnalyticsTracker() {
@@ -55,6 +57,7 @@ function HomePage() {
         <Hero />
         <About />
         <Gallery />
+        <NSS2027Highlight />
         <Countdown />
         <Metrics />
         <Pillars />
@@ -80,6 +83,7 @@ function App() {
         <Route path="/travel" element={<TravelPage />} />
         <Route path="/speakers" element={<SpeakersPage />} />
         <Route path="/agenda" element={<AgendaPage />} />
+        <Route path="/nss-2027" element={<NSS2027Page />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
