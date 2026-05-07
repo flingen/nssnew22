@@ -59,16 +59,6 @@ export function Exhibitors() {
           ))}
         </div>
       </div>
-
-      {/* Bottom note */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
-        <div className="text-center">
-          <p className="text-text-grey text-sm">
-            <span className="text-fintech-gold font-semibold">{exhibitors.length}+</span> exhibitors confirmed ·{' '}
-            <span className="text-nigeria-green font-semibold">More joining</span> the show floor
-          </p>
-        </div>
-      </div>
     </section>
   );
 }
