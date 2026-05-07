@@ -5,7 +5,8 @@ import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Gallery } from './components/sections/Gallery';
-import { NSS2027Highlight } from './components/sections/NSS2027Highlight';
+import { SpeakersHighlight } from './components/sections/SpeakersHighlight';
+import { Exhibitors } from './components/sections/Exhibitors';
 import { Countdown } from './components/sections/Countdown';
 import { Metrics } from './components/sections/Metrics';
 import { Pillars } from './components/sections/Pillars';
@@ -56,12 +57,13 @@ function HomePage() {
       <main>
         <Hero />
         <About />
+        <SpeakersHighlight />
         <Gallery />
-        <NSS2027Highlight />
         <Countdown />
         <Metrics />
         <Pillars />
         <PastBrands />
+        <Exhibitors />
         <WhoShouldAttend />
         <Panels />
         <Sponsorship />
