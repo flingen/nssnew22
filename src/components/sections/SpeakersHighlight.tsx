@@ -58,8 +58,11 @@ export function SpeakersHighlight() {
                 <img
                   src={speaker.image}
                   alt={speaker.name}
+                  width={512}
+                  height={512}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-4">

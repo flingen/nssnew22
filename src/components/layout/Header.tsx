@@ -138,8 +138,12 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img
-              src="/asn_1-removebg-preview.png"
+              src="/asn_1-removebg-preview-256.webp"
               alt="NSS 2.0"
+              width={256}
+              height={96}
+              fetchPriority="high"
+              decoding="async"
               className="h-10 sm:h-12 w-auto"
             />
           </Link>

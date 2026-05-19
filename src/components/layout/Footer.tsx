@@ -25,8 +25,12 @@ export function Footer() {
         <div className="flex flex-col gap-12">
           <div className="flex flex-col items-center text-center border-b border-white/10 pb-12">
             <img
-              src="/asn_1-removebg-preview.png"
+              src="/asn_1-removebg-preview-256.webp"
               alt="Africa Stablecoin Network"
+              width={256}
+              height={96}
+              loading="lazy"
+              decoding="async"
               className="h-16 sm:h-20 w-auto mb-4"
             />
             <span className="font-satoshi font-bold text-white text-2xl block mb-2">NSS 2.0</span>

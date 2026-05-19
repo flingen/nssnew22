@@ -85,10 +85,13 @@ export function PastBrands() {
               className="flex-shrink-0 w-40 h-24 sm:w-48 sm:h-28 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center p-5 shadow-xl border border-white/10 transition-all duration-300 hover:bg-white hover:shadow-glow-green hover:-translate-y-1"
             >
               <img
-                src={`/brands/${brand}.png`}
+                src={`/brands/${brand}-240.webp`}
                 alt={`${brand} logo`}
+                width={240}
+                height={140}
                 className="max-w-full max-h-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

@@ -3,42 +3,82 @@ import { MapPin, Calendar, Clock } from 'lucide-react';
 
 const TICKET_URL = 'https://tix.africa/discover/nss2026';
 
+// Each slide ships in two WebP widths (800w mobile, 1600w desktop) plus a JPG fallback.
+// First slide is preloaded in index.html and loaded eagerly with fetchpriority="high";
+// the rest are deferred until after the page is interactive.
 const SLIDES = [
-  '/nss1-01.jpg',
-  '/nss1-02.jpg',
-  '/nss1-03.jpg',
-  '/nss1-04.jpg',
-  '/nss1-05.jpg',
+  { base: '/nss1-01', alt: 'NSS 1.0 main stage' },
+  { base: '/nss1-02', alt: 'NSS 1.0 audience' },
+  { base: '/nss1-03', alt: 'NSS 1.0 panel discussion' },
+  { base: '/nss1-04', alt: 'NSS 1.0 networking' },
+  { base: '/nss1-05', alt: 'NSS 1.0 exhibition floor' },
 ];
 
 const SLIDE_INTERVAL_MS = 5000;
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // Only load slides 2-5 after the page is interactive — saves ~150 KB on initial load.
+  const [loadRest, setLoadRest] = useState(false);
 
   useEffect(() => {
+    const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback;
+    if (idle) {
+      idle(() => setLoadRest(true));
+      return;
+    }
+    const t = setTimeout(() => setLoadRest(true), 1500);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!loadRest) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
     }, SLIDE_INTERVAL_MS);
     return () => clearInterval(timer);
-  }, []);
+  }, [loadRest]);
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Slideshow background */}
+    <section
+      id="home"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-deep-navy"
+    >
+      {/* Slideshow background — uses <picture> for WebP + responsive sizing.
+          First image is high-priority and eager; the rest lazy-load. */}
       <div className="absolute inset-0">
-        {SLIDES.map((src, index) => (
-          <div
-            key={src}
-            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-            style={{
-              backgroundImage: `url('${src}')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: index === currentSlide ? 1 : 0,
-            }}
-          />
-        ))}
+        {SLIDES.map((slide, index) => {
+          const isFirst = index === 0;
+          if (!isFirst && !loadRest) return null;
+
+          return (
+            <picture
+              key={slide.base}
+              className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              style={{ opacity: index === currentSlide ? 1 : 0 }}
+            >
+              <source
+                type="image/webp"
+                media="(max-width: 768px)"
+                srcSet={`${slide.base}-800.webp`}
+              />
+              <source
+                type="image/webp"
+                srcSet={`${slide.base}-1600.webp`}
+              />
+              <img
+                src={`${slide.base}-1600.jpg`}
+                alt={slide.alt}
+                width={1600}
+                height={900}
+                fetchPriority={isFirst ? 'high' : 'low'}
+                loading={isFirst ? 'eager' : 'lazy'}
+                decoding={isFirst ? 'sync' : 'async'}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </picture>
+          );
+        })}
       </div>
 
       {/* Top gradient - darkens only the top of the hero so nav + title stay readable */}
@@ -46,7 +86,10 @@ export function Hero() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-40">
         <div className="animate-stagger">
-          <h1 className="font-satoshi font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-2xl" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6)' }}>
+          <h1
+            className="font-satoshi font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-2xl"
+            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6)' }}
+          >
             Nigeria Stablecoin Summit 2.0
           </h1>
 
@@ -112,8 +155,12 @@ export function Hero() {
                 className="transition-opacity hover:opacity-80"
               >
                 <img
-                  src="/asn_1-removebg-preview.png"
+                  src="/asn_1-removebg-preview-256.webp"
                   alt="Africa Stablecoin Network"
+                  width={256}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                   className="h-12 sm:h-14 lg:h-16 w-auto"
                 />
               </a>
@@ -125,8 +172,12 @@ export function Hero() {
                 className="transition-opacity hover:opacity-80"
               >
                 <img
-                  src="/nl_wordmark-05.png"
+                  src="/nl_wordmark-05-256.webp"
                   alt="Nathaniel Luz"
+                  width={256}
+                  height={72}
+                  loading="lazy"
+                  decoding="async"
                   className="h-9 sm:h-10 lg:h-12 w-auto"
                 />
               </a>

@@ -1,8 +1,8 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
-const speakingImages = Array.from({ length: 10 }, (_, i) => `/gallery/speaking-${String(i + 1).padStart(2, '0')}.jpg`);
-const exhibitingImages = Array.from({ length: 10 }, (_, i) => `/gallery/exhibiting-${String(i + 1).padStart(2, '0')}.jpg`);
-const attendingImages = Array.from({ length: 10 }, (_, i) => `/gallery/attending-${String(i + 1).padStart(2, '0')}.jpg`);
+const speakingImages = Array.from({ length: 10 }, (_, i) => `/gallery/speaking-${String(i + 1).padStart(2, '0')}-640.webp`);
+const exhibitingImages = Array.from({ length: 10 }, (_, i) => `/gallery/exhibiting-${String(i + 1).padStart(2, '0')}-640.webp`);
+const attendingImages = Array.from({ length: 10 }, (_, i) => `/gallery/attending-${String(i + 1).padStart(2, '0')}-640.webp`);
 
 type MarqueeRowProps = {
   images: string[];
@@ -26,8 +26,11 @@ function MarqueeRow({ images, direction, altPrefix }: MarqueeRowProps) {
             <img
               src={src}
               alt={`${altPrefix} ${(idx % images.length) + 1}`}
+              width={640}
+              height={420}
               className="w-full h-full object-cover"
               loading="lazy"
+              decoding="async"
             />
           </div>
         ))}

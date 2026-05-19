@@ -10,10 +10,10 @@ interface Exhibitor {
 const exhibitors: Exhibitor[] = [
   { slug: 'ydpay',     name: 'YDPay',             logo: '/exhibitors/ydpay.svg' },
   { slug: 'centiiv',   name: 'Centiiv',           logo: '/exhibitors/centiiv.svg' },
-  { slug: 'nexply',    name: 'Nexply Compliance', logo: '/exhibitors/nexply-compliance.png' },
-  { slug: 'ledig',     name: 'Ledig',             logo: '/exhibitors/ledig.png' },
-  { slug: 'vaspa',     name: 'VASPA',             logo: '/exhibitors/vaspa.png' },
-  { slug: 'yogupay',   name: 'YogUpay',           logo: '/exhibitors/yogupay.png' },
+  { slug: 'nexply',    name: 'Nexply Compliance', logo: '/exhibitors/nexply-compliance-320.webp' },
+  { slug: 'ledig',     name: 'Ledig',             logo: '/exhibitors/ledig-320.webp' },
+  { slug: 'vaspa',     name: 'VASPA',             logo: '/exhibitors/vaspa-320.webp' },
+  { slug: 'yogupay',   name: 'YogUpay',           logo: '/exhibitors/yogupay-320.webp' },
 ];
 
 export function Exhibitors() {
@@ -52,8 +52,11 @@ export function Exhibitors() {
               <img
                 src={exhibitor.logo}
                 alt={`${exhibitor.name} logo`}
+                width={320}
+                height={120}
                 className="max-w-full max-h-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
