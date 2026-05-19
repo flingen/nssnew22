@@ -1,35 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8L10Q532E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-B8L10Q532E');
-    </script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1890744954979673');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-
     <meta charset="UTF-8" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+
     <title>Nigeria Stablecoin Summit 2.0 | New Vistas</title>
     <meta name="description" content="The Premier Gathering on Payments and Banking Innovation. Join policymakers, regulators, banks, and fintech leaders at Nigeria's foremost summit on payment and banking innovation." />
     <meta name="keywords" content="Stablecoin Summit Nigeria, Fintech Conference Lagos 2026, CBN Crypto Regulation, Digital Payments Africa" />
@@ -44,15 +21,81 @@
     <meta name="twitter:description" content="The Premier Gathering on Payments and Banking Innovation in Africa" />
     <meta name="twitter:image" content="https://www.nigeriastablecoinsummit.com/og-image.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- PRELOAD THE LCP IMAGE — separate hints for mobile vs desktop so the browser
+         fetches the right size early. This is the single biggest LCP improvement. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/nss1-01-800.webp"
+      type="image/webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/nss1-01-1600.webp"
+      type="image/webp"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
+
+    <!-- Fonts — only the weights actually used. Inter 400/600/700 + Plus Jakarta 600/700. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- Meta Pixel noscript fallback -->
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1890744954979673&ev=PageView&noscript=1" /></noscript>
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Analytics deferred to after page is interactive. Both fbq and gtag are
+         still callable from the React tracker thanks to the queue stubs below;
+         calls made before the real script loads get replayed once it arrives. -->
+    <script>
+      // gtag stub — calls are queued in dataLayer until gtag.js loads.
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-B8L10Q532E');
+
+      // Meta Pixel stub — queues fbq() calls until fbevents.js loads.
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n;
+        n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+        // Defer real script injection until after load.
+        var inject = function () {
+          t = b.createElement(e); t.async = !0; t.src = v;
+          s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        };
+        if (document.readyState === 'complete') {
+          setTimeout(inject, 0);
+        } else {
+          window.addEventListener('load', function () { setTimeout(inject, 0); });
+        }
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1890744954979673');
+      fbq('track', 'PageView');
+
+      // Defer gtag.js the same way.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var g = document.createElement('script');
+          g.async = true;
+          g.src = 'https://www.googletagmanager.com/gtag/js?id=G-B8L10Q532E';
+          document.head.appendChild(g);
+        }, 0);
+      });
+    </script>
+
+    <!-- Meta Pixel noscript fallback -->
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1890744954979673&ev=PageView&noscript=1" alt="" />
+    </noscript>
   </body>
 </html>
