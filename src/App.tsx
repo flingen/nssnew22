@@ -19,9 +19,6 @@ import { CTA } from './components/sections/CTA';
 import { FAQ } from './components/sections/FAQ';
 
 // Sub-pages are lazy-loaded so the home page bundle doesn't carry their code.
-// AdminPage in particular pulls in @supabase/supabase-js (~120 KB gzip) — splitting it out
-// is the single largest JS reduction we can make for the home-page LCP.
-const AdminPage = lazy(() => import('./pages/AdminPage').then((m) => ({ default: m.AdminPage })));
 const TravelPage = lazy(() => import('./pages/TravelPage').then((m) => ({ default: m.TravelPage })));
 const SpeakersPage = lazy(() => import('./pages/SpeakersPage').then((m) => ({ default: m.SpeakersPage })));
 const AgendaPage = lazy(() => import('./pages/AgendaPage').then((m) => ({ default: m.AgendaPage })));
@@ -97,7 +94,6 @@ function App() {
           <Route path="/speakers" element={<SpeakersPage />} />
           <Route path="/agenda" element={<AgendaPage />} />
           <Route path="/nss-2027" element={<NSS2027Page />} />
-          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
