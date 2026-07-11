@@ -33,27 +33,7 @@ export function Footer() {
               decoding="async"
               className="h-16 sm:h-20 w-auto mb-4"
             />
-            <span className="font-satoshi font-bold text-white text-2xl block mb-2">NSS 2.0</span>
-            <span className="text-nigeria-green text-base font-medium mb-4">
-              Powered by{' '}
-              <a
-                href="https://afristablecoin.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                ASN
-              </a>
-              {' × '}
-              <a
-                href="https://www.linkedin.com/in/nathanielluz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                Nathaniel Luz
-              </a>
-            </span>
+            <span className="font-satoshi font-bold text-white text-2xl block mb-4">NSS 2.0</span>
             <p className="text-text-light max-w-2xl leading-relaxed text-sm">
               The{' '}
               <a

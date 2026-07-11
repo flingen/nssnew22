@@ -1,6 +1,6 @@
 import { ArrowRight, Ticket, Handshake } from 'lucide-react';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 
 export function CTA() {
   return (
@@ -59,6 +59,20 @@ export function CTA() {
             <Handshake className="w-5 h-5" />
             Marketing Opportunities
           </a>
+        </div>
+
+        {/* Luma registration embed — attendees can register without leaving the site */}
+        <div id="register" className="mt-14 flex justify-center">
+          <iframe
+            src="https://luma.com/embed/event/evt-Spr0dDUlIpAziaO/simple"
+            title="Register for Nigeria Stablecoin Summit 2.0"
+            width="600"
+            height="450"
+            frameBorder="0"
+            className="w-full max-w-[600px] rounded-xl border border-[#bfcbda88] bg-white shadow-lg"
+            allow="fullscreen; payment"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

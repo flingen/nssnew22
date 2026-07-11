@@ -1,4 +1,4 @@
-import { Trophy, Calendar, GraduationCap, FileText, Award, Users, ExternalLink, AlertCircle, CheckCircle } from 'lucide-react';
+import { Trophy, Calendar, GraduationCap, Award, Users, ExternalLink, AlertCircle, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const prizes = [

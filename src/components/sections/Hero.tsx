@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { MapPin, Calendar, Clock } from 'lucide-react';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 
 // Each slide ships in two WebP widths (800w mobile, 1600w desktop) plus a JPG fallback.
 // First slide is preloaded in index.html and loaded eagerly with fetchpriority="high";
@@ -84,7 +84,7 @@ export function Hero() {
       {/* Top gradient - darkens only the top of the hero so nav + title stay readable */}
       <div className="absolute top-0 left-0 right-0 h-[55%] bg-gradient-to-b from-black/75 via-black/40 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-40">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-24">
         <div className="animate-stagger">
           <h1
             className="font-satoshi font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-2xl"
@@ -129,62 +129,10 @@ export function Hero() {
             >
               Marketing Deck
             </a>
-            <a
-              href="https://calendly.com/nigeriastablecoinsummit/nss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-800/90 backdrop-blur-md border-2 border-emerald-500 text-white px-10 py-4 text-lg inline-flex items-center justify-center gap-2 font-bold rounded-lg transition-all hover:bg-slate-700/90 hover:shadow-lg hover:shadow-emerald-500/20"
-            >
-              Book a Call
-            </a>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 py-4 bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <span className="text-gray-700 text-lg sm:text-xl lg:text-2xl tracking-wide font-semibold">
-              Powered by
-            </span>
-            <div className="flex items-center gap-4 sm:gap-5">
-              <a
-                href="https://afristablecoin.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-80"
-              >
-                <img
-                  src="/asn_1-removebg-preview-256.webp"
-                  alt="Africa Stablecoin Network"
-                  width={256}
-                  height={96}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-12 sm:h-14 lg:h-16 w-auto"
-                />
-              </a>
-              <span className="text-gray-500 text-2xl sm:text-3xl font-light">×</span>
-              <a
-                href="https://www.linkedin.com/in/nathanielluz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-80"
-              >
-                <img
-                  src="/nl_wordmark-05-256.webp"
-                  alt="Nathaniel Luz"
-                  width={256}
-                  height={72}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-9 sm:h-10 lg:h-12 w-auto"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

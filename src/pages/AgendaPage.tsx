@@ -4,7 +4,7 @@ import { CalendarDays, Sparkles, ArrowRight, Ticket, Clock } from 'lucide-react'
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 
 export function AgendaPage() {
   useEffect(() => {

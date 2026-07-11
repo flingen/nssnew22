@@ -5,7 +5,7 @@ import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { speakers, type Speaker } from '../data/speakers';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 
 export function SpeakersPage() {
   const [activeSpeaker, setActiveSpeaker] = useState<Speaker | null>(null);

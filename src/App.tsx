@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
@@ -22,7 +22,6 @@ import { FAQ } from './components/sections/FAQ';
 const TravelPage = lazy(() => import('./pages/TravelPage').then((m) => ({ default: m.TravelPage })));
 const SpeakersPage = lazy(() => import('./pages/SpeakersPage').then((m) => ({ default: m.SpeakersPage })));
 const AgendaPage = lazy(() => import('./pages/AgendaPage').then((m) => ({ default: m.AgendaPage })));
-const NSS2027Page = lazy(() => import('./pages/NSS2027Page').then((m) => ({ default: m.NSS2027Page })));
 
 // Sends a pageview to Google Analytics AND Meta Pixel every time the route changes.
 function AnalyticsTracker() {
@@ -93,7 +92,8 @@ function App() {
           <Route path="/travel" element={<TravelPage />} />
           <Route path="/speakers" element={<SpeakersPage />} />
           <Route path="/agenda" element={<AgendaPage />} />
-          <Route path="/nss-2027" element={<NSS2027Page />} />
+          {/* Unknown routes fall back to the home page instead of a blank screen */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

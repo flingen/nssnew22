@@ -17,7 +17,7 @@ import {
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 const INVITE_EMAIL = 'nss@afristablecoin.org';
 const RDG_WHATSAPP =
   'https://wa.me/2349035523731?text=Hello%20Olamide%2C%20I%27m%20enquiring%20about%20travel%20support%20for%20the%20Nigeria%20Stablecoin%20Summit.';

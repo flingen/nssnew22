@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Ticket, Sparkles } from 'lucide-react';
+import { Menu, X, Ticket } from 'lucide-react';
 
-const TICKET_URL = 'https://tix.africa/discover/nss2026';
+const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
 
 type NavLink =
-  | { label: string; to: string; type: 'internal'; highlight?: boolean }
-  | { label: string; to: string; type: 'external'; highlight?: boolean };
+  | { label: string; to: string; type: 'internal' }
+  | { label: string; to: string; type: 'external' };
 
 const navLinks: NavLink[] = [
   { label: 'Home', to: '/', type: 'internal' },
@@ -23,7 +23,6 @@ const navLinks: NavLink[] = [
     to: 'https://drive.google.com/drive/folders/16mrdO5-lheId1-mZ_m3sY4QoVHuT8pXa',
     type: 'external',
   },
-  { label: 'NSS 2027', to: '/nss-2027', type: 'internal', highlight: true },
 ];
 
 export function Header() {
@@ -44,21 +43,7 @@ export function Header() {
   const linkClassesMobile =
     'text-white/80 hover:text-nigeria-green text-base font-medium transition-colors';
 
-  const highlightClassesDesktop =
-    'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold-gradient text-deep-navy text-sm font-bold shadow-glow-gold hover:scale-105 transition-transform';
-  const highlightClassesMobile =
-    'inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gold-gradient text-deep-navy text-base font-bold shadow-glow-gold w-fit';
-
   const renderDesktopLink = (link: NavLink) => {
-    if (link.highlight && link.type === 'internal') {
-      return (
-        <Link key={link.to} to={link.to} className={highlightClassesDesktop}>
-          <Sparkles className="w-3.5 h-3.5" />
-          {link.label}
-        </Link>
-      );
-    }
-
     const underline = (
       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-nigeria-green transition-all group-hover:w-full" />
     );
@@ -87,20 +72,6 @@ export function Header() {
   };
 
   const renderMobileLink = (link: NavLink) => {
-    if (link.highlight && link.type === 'internal') {
-      return (
-        <Link
-          key={link.to}
-          to={link.to}
-          onClick={() => setIsMobileMenuOpen(false)}
-          className={highlightClassesMobile}
-        >
-          <Sparkles className="w-4 h-4" />
-          {link.label}
-        </Link>
-      );
-    }
-
     if (link.type === 'internal') {
       return (
         <Link
