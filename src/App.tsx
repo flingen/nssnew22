@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import { TicketModal } from './components/TicketModal';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Gallery } from './components/sections/Gallery';
@@ -96,6 +97,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
+      <TicketModal />
     </BrowserRouter>
   );
 }

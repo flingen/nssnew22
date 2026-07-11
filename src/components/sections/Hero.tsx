@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MapPin, Calendar, Clock } from 'lucide-react';
-
-const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
+import { TICKET_URL, openTicketModal } from '../../lib/ticketModal';
 
 // Each slide ships in two WebP widths (800w mobile, 1600w desktop) plus a JPG fallback.
 // First slide is preloaded in index.html and loaded eagerly with fetchpriority="high";
@@ -114,11 +113,11 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={TICKET_URL}
-              data-luma-action="checkout"
-              data-luma-event-id="evt-Spr0dDUlIpAziaO"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="luma-checkout--button btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2 font-bold"
+              onClick={(e) => {
+                e.preventDefault();
+                openTicketModal();
+              }}
+              className="btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2 font-bold"
             >
               <Calendar className="w-5 h-5" />
               Get a Free Ticket

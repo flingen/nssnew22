@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { CalendarDays, Sparkles, ArrowRight, Ticket, Clock } from 'lucide-react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-
-const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
+import { TICKET_URL, openTicketModal } from '../lib/ticketModal';
 
 export function AgendaPage() {
   useEffect(() => {
@@ -65,11 +64,11 @@ export function AgendaPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={TICKET_URL}
-                data-luma-action="checkout"
-                data-luma-event-id="evt-Spr0dDUlIpAziaO"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="luma-checkout--button btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 text-base"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openTicketModal();
+                }}
+                className="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 text-base"
               >
                 <Ticket className="w-5 h-5" />
                 Book a Seat

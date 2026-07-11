@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Ticket } from 'lucide-react';
-
-const TICKET_URL = 'https://luma.com/event/evt-Spr0dDUlIpAziaO';
+import { TICKET_URL, openTicketModal } from '../../lib/ticketModal';
 
 type NavLink =
   | { label: string; to: string; type: 'internal' }
@@ -126,11 +125,11 @@ export function Header() {
           <div className="flex items-center gap-4">
             <a
               href={TICKET_URL}
-              data-luma-action="checkout"
-              data-luma-event-id="evt-Spr0dDUlIpAziaO"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="luma-checkout--button btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                openTicketModal();
+              }}
+              className="btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm"
             >
               <Ticket className="w-4 h-4" />
               Get a Free Ticket
@@ -151,11 +150,12 @@ export function Header() {
               {navLinks.map(renderMobileLink)}
               <a
                 href={TICKET_URL}
-                data-luma-action="checkout"
-                data-luma-event-id="evt-Spr0dDUlIpAziaO"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="luma-checkout--button btn-primary mt-2 w-full text-center py-3 sm:hidden inline-flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  openTicketModal();
+                }}
+                className="btn-primary mt-2 w-full text-center py-3 sm:hidden inline-flex items-center justify-center gap-2"
               >
                 <Ticket className="w-4 h-4" />
                 Get a Free Ticket
