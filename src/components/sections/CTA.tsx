@@ -42,9 +42,11 @@ export function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={TICKET_URL}
+            data-luma-action="checkout"
+            data-luma-event-id="evt-Spr0dDUlIpAziaO"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2"
+            className="luma-checkout--button btn-primary px-10 py-4 text-lg inline-flex items-center justify-center gap-2"
           >
             <Ticket className="w-5 h-5" />
             Book a Seat

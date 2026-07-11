@@ -126,9 +126,11 @@ export function Header() {
           <div className="flex items-center gap-4">
             <a
               href={TICKET_URL}
+              data-luma-action="checkout"
+              data-luma-event-id="evt-Spr0dDUlIpAziaO"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm"
+              className="luma-checkout--button btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm"
             >
               <Ticket className="w-4 h-4" />
               Get a Free Ticket
@@ -149,9 +151,11 @@ export function Header() {
               {navLinks.map(renderMobileLink)}
               <a
                 href={TICKET_URL}
+                data-luma-action="checkout"
+                data-luma-event-id="evt-Spr0dDUlIpAziaO"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary mt-2 w-full text-center py-3 sm:hidden inline-flex items-center justify-center gap-2"
+                className="luma-checkout--button btn-primary mt-2 w-full text-center py-3 sm:hidden inline-flex items-center justify-center gap-2"
               >
                 <Ticket className="w-4 h-4" />
                 Get a Free Ticket
