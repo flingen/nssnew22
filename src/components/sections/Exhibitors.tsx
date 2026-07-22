@@ -14,6 +14,9 @@ const exhibitors: Exhibitor[] = [
   { slug: 'ledig',     name: 'Ledig',             logo: '/exhibitors/ledig-320.webp' },
   { slug: 'vaspa',     name: 'VASPA',             logo: '/exhibitors/vaspa-320.webp' },
   { slug: 'yogupay',   name: 'YogUpay',           logo: '/exhibitors/yogupay-320.webp' },
+  { slug: 'startbutton', name: 'Startbutton',     logo: '/exhibitors/startbutton-320.webp' },
+  { slug: 'onrapay',   name: 'Onrapay',           logo: '/exhibitors/onrapay-320.webp' },
+  { slug: 'kora',      name: 'Kora',              logo: '/exhibitors/kora-320.webp' },
 ];
 
 export function Exhibitors() {
