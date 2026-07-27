@@ -21,7 +21,7 @@ const faqs = [
   {
     question: 'How can I register or book a seat?',
     answer:
-      'You can secure your spot by clicking the "Book a Seat" button on the website. General attendance is free but you can also get a VIP ticket to attend exclusive sessions.',
+      'You can secure your spot by clicking the "Book a Seat" button on the website. General attendance tickets are available, and you can also get a VIP ticket to attend exclusive sessions.',
   },
   {
     question: 'Will there be opportunities for networking and partnerships?',
