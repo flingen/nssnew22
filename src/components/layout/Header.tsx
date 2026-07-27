@@ -132,7 +132,7 @@ export function Header() {
               className="btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm"
             >
               <Ticket className="w-4 h-4" />
-              Get a Free Ticket
+              Get a Ticket
             </a>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -158,7 +158,7 @@ export function Header() {
                 className="btn-primary mt-2 w-full text-center py-3 sm:hidden inline-flex items-center justify-center gap-2"
               >
                 <Ticket className="w-4 h-4" />
-                Get a Free Ticket
+                Get a Ticket
               </a>
             </nav>
           </div>
