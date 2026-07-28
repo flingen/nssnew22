@@ -61,8 +61,8 @@ export function SpeakersPage() {
             </p>
           </div>
 
-          {/* Speaker grid: 5 per row on large, responsive on smaller screens */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 sm:gap-6">
+          {/* Speaker grid: 6 per row on large, responsive on smaller screens */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 sm:gap-6">
             {speakers.map((speaker) => (
               <button
                 key={speaker.id}
@@ -103,8 +103,8 @@ export function SpeakersPage() {
               </button>
             ))}
 
-            {/* "More speakers coming soon" placeholder cards to fill the row of 5 */}
-            {Array.from({ length: 4 }).map((_, i) => (
+            {/* "More speakers coming soon" placeholder cards to fill the last row of 6 */}
+            {Array.from({ length: (6 - (speakers.length % 6)) % 6 }).map((_, i) => (
               <ComingSoonCard key={`soon-${i}`} delay={i} />
             ))}
           </div>
