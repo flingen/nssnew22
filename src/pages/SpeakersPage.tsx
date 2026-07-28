@@ -83,7 +83,7 @@ export function SpeakersPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                     <span className="text-fintech-gold text-xs font-semibold tracking-widest uppercase">
-                      Read Bio
+                      {speaker.bio.length > 0 ? 'Read Bio' : 'View'}
                     </span>
                   </div>
                 </div>
@@ -94,9 +94,11 @@ export function SpeakersPage() {
                   <p className="text-text-light text-xs leading-snug mb-1">
                     {speaker.role}
                   </p>
-                  <p className="text-nigeria-green text-xs font-medium">
-                    {speaker.organization}
-                  </p>
+                  {speaker.organization && (
+                    <p className="text-nigeria-green text-xs font-medium">
+                      {speaker.organization}
+                    </p>
+                  )}
                 </div>
               </button>
             ))}
@@ -237,20 +239,24 @@ function SpeakerBioModal({
               {speaker.name}
             </h2>
             <p className="text-fintech-gold font-medium mb-1">{speaker.role}</p>
-            <p className="text-nigeria-green font-semibold mb-6">
-              {speaker.organization}
-            </p>
+            {speaker.organization && (
+              <p className="text-nigeria-green font-semibold mb-6">
+                {speaker.organization}
+              </p>
+            )}
 
-            <div className="border-t border-white/10 pt-6 space-y-4">
-              {speaker.bio.map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className="text-text-light leading-relaxed text-sm md:text-base"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            {speaker.bio.length > 0 && (
+              <div className="border-t border-white/10 pt-6 space-y-4">
+                {speaker.bio.map((paragraph, idx) => (
+                  <p
+                    key={idx}
+                    className="text-text-light leading-relaxed text-sm md:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

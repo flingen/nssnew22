@@ -72,9 +72,11 @@ export function SpeakersHighlight() {
                 <p className="text-text-light text-xs leading-snug line-clamp-1">
                   {speaker.role}
                 </p>
-                <p className="text-nigeria-green text-xs font-medium mt-1 line-clamp-1">
-                  {speaker.organization}
-                </p>
+                {speaker.organization && (
+                  <p className="text-nigeria-green text-xs font-medium mt-1 line-clamp-1">
+                    {speaker.organization}
+                  </p>
+                )}
               </div>
             </Link>
           ))}

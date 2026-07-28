@@ -8,6 +8,8 @@ interface Exhibitor {
 }
 
 const exhibitors: Exhibitor[] = [
+  { slug: 'daya',      name: 'Daya',              logo: '/exhibitors/daya-320.webp' },
+  { slug: 'nrs',       name: 'Nigeria Revenue Service', logo: '/exhibitors/nrs-320.webp' },
   { slug: 'ydpay',     name: 'YDPay',             logo: '/exhibitors/ydpay.svg' },
   { slug: 'centiiv',   name: 'Centiiv',           logo: '/exhibitors/centiiv.svg' },
   { slug: 'nexply',    name: 'Nexply Compliance', logo: '/exhibitors/nexply-compliance-320.webp' },
