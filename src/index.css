@@ -428,3 +428,32 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
+
+/* Respect the OS "reduce motion" setting. Ambient float/glow loops and the
+   smooth-scroll behaviour are decorative, so they are switched off rather than
+   sped up. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-stagger > * {
+    animation: none !important;
+  }
+
+  .animate-stagger > * {
+    opacity: 1;
+  }
+
+  .card-hover:hover,
+  .metric-card:hover,
+  .pillar-card:hover,
+  .essay-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-green:hover {
+    transform: none;
+  }
+}
