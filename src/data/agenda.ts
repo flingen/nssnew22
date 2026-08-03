@@ -221,14 +221,7 @@ export const agenda: AgendaSession[] = [
     host: { slug: 'nathaniel-luz' },
     hostLabel: 'Hosted by',
     peopleLabel: 'In conversation',
-    people: [
-      {
-        name: 'Kehinde Kajesomo',
-        role: 'Director, Competent Authority Department',
-        organization: 'Nigeria Revenue Service',
-      },
-      { slug: 'oni-oluwole-olushola', organization: 'Nigeria Revenue Service' },
-    ],
+    people: [{ slug: 'oni-oluwole-olushola', organization: 'Nigeria Revenue Service' }],
   },
   {
     id: 'showcase-nexply',
@@ -269,7 +262,6 @@ export const agenda: AgendaSession[] = [
       { slug: 'michael-emeeka' },
       { slug: 'chinedu-obidiegwu' },
       { slug: 'tosin-nathaniel-luz' },
-      { slug: 'ademola-agbetuyi' },
     ],
   },
   {
@@ -286,7 +278,6 @@ export const agenda: AgendaSession[] = [
     people: [
       { slug: 'francis-ogbuka' },
       { slug: 'kofi-akosah-adusei' },
-      { slug: 'uyoyo-ogedegbe' },
       { slug: 'ayo-adewuyi' },
       { slug: 'oke-omolade' },
     ],
